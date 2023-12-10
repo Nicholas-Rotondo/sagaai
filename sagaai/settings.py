@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sagaai_api'
+    'sagaai_api',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,10 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # or your React frontend URL
+]
 
 
 # Static files (CSS, JavaScript, Images)
