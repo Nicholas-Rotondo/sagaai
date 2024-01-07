@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate
 from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
-from .models import User
+from .models import User, Story
 from .utils import validate_email as email_is_valid
 
 
@@ -136,3 +136,8 @@ class LogoutSerializer(serializers.Serializer[User]):
 
         except TokenError as ex:
             raise exceptions.AuthenticationFailed(ex)
+        
+class UploadStorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Story
+        fields = ['title', 'pdf']

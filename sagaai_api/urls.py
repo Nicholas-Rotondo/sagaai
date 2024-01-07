@@ -6,6 +6,7 @@ from .views import (
     LogoutAPIView,
     RegistrationAPIView,
     UserRetrieveUpdateAPIView,
+    StoryUploadView,
 )
 
 app_name = 'sagaai_api'
@@ -17,4 +18,5 @@ urlpatterns = [
     path('user/', UserRetrieveUpdateAPIView.as_view(), name='user'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('uploadStory/', StoryUploadView.as_view(), name="upload_story"),
 ]

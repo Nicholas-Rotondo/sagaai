@@ -33,6 +33,10 @@ REST_FRAMEWORK = {'DEFAULT_AUTHENTICATION_CLASSES': (
 
 AUTH_USER_MODEL = 'sagaai_api.User'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Add your frontend's URL
+]
+
 
 # Application definition
 

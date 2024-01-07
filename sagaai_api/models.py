@@ -81,6 +81,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self) -> str:
         """Return user username."""
         return self.username
+    
+
+class Story(models.Model):
+    title = models.CharField(max_length=100)
+    pdf = models.FileField(upload_to='pdfs/')
+
+    
+
 
 
 
